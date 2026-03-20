@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - patrick_data:/data
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Database__Path=/data/patrickstar.db
+      - Jwt__Key=CHANGE_THIS_SECRET_KEY_FOR_PRODUCTION_MIN32CHARS
+      - PATRICK_ADMIN_TOKEN=patrick2024
+    restart: unless-stopped
+
+volumes:
+  patrick_data:
+    driver: local
