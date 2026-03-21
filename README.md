@@ -105,6 +105,37 @@ Later updates: change code, then `fly deploy` again from the same directory.
 | `fly secrets list` | See secret names (not values) |
 | `fly ssh console` | Shell into a machine |
 
+### Custom domain (HTTPS)
+
+1. **Attach the hostname to your Fly app** (replace with your domain and app name):
+
+   ```powershell
+   fly certs add www.yourdomain.com --app patrick-star-performer
+   fly certs add yourdomain.com --app patrick-star-performer
+   ```
+
+   Or use the [Fly dashboard](https://fly.io/dashboard/) → your app → **Certificates** → add hostname.
+
+2. **Follow the DNS instructions Fly prints** (or run `fly certs setup yourdomain.com --app patrick-star-performer`). Typical patterns:
+   - **Apex** (`yourdomain.com`): **A** and **AAAA** records to the IPs Fly shows. If none are listed, allocate addresses with `fly ips allocate` (see `fly ips` help) for that app.
+   - **`www` (subdomain):** **CNAME** from `www` to the `*.fly.dev` target Fly shows (e.g. `patrick-star-performer.fly.dev`).
+
+3. **Add the records at your registrar** (Cloudflare, Namecheap, Route 53, etc.). Wait for DNS to propagate (often minutes, sometimes up to 48h).
+
+4. **Check certificate status:**
+
+   ```powershell
+   fly certs check yourdomain.com --app patrick-star-performer
+   ```
+
+   Fly issues **Let’s Encrypt** certificates automatically once validation succeeds.
+
+5. **This app** does not need code changes for a single custom domain; the same build serves `/`, `/admin`, and `/dashboard` on any hostname you attach.
+
+**Cloudflare:** If the hostname is proxied (orange cloud), see Fly’s [Cloudflare + TLS](https://fly.io/docs/networking/custom-domains-with-fly/) notes — you may need a `_fly-ownership` TXT record and SSL mode **Full** or **Full (strict)** (not “Flexible”).
+
+Full reference: [Custom domains on Fly.io](https://fly.io/docs/networking/custom-domains-with-fly/).
+
 ---
 
 ## Environment Variables
