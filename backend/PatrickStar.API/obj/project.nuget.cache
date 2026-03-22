@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I1DJ0oAV8tM=",
+  "dgSpecHash": "AyMQ3BGz0iU=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
+  "projectFilePath": "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Carnival\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Carnival\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",

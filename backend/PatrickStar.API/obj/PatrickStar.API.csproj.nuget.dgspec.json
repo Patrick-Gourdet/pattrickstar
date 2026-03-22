@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj": {}
+    "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj": {
+    "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
+        "projectUniqueName": "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
         "projectName": "PatrickStar.API",
-        "projectPath": "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
+        "projectPath": "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\PatrickStar.API.csproj",
         "packagesPath": "C:\\Users\\Carnival\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\obj\\",
+        "outputPath": "C:\\Users\\Carnival\\Documents\\patrick-star\\backend\\PatrickStar.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
