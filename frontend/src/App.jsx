@@ -3,6 +3,10 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Nav from './components/Nav';
 import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import TracksPage from './pages/TracksPage';
+import ServicesPage from './pages/ServicesPage';
+import BookPage from './pages/BookPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -19,6 +23,10 @@ function AppRoutes() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/tracks" element={<TracksPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/book" element={<BookPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />

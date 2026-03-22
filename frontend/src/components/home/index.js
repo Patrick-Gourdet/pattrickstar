@@ -1,3 +1,4 @@
+export { default as MarketingLayout } from './MarketingLayout';
 export { default as SectionRule } from './SectionRule';
 export { default as HeroSection } from './HeroSection';
 export { default as AboutSection } from './AboutSection';

@@ -26,14 +26,16 @@ backend/PatrickStar.API/
   Models/Models.cs   — Client, Venue, Booking, DTOs
 
 frontend/src/
-  App.jsx             — Routes: /, /login, /register, /dashboard (private), /admin
+  App.jsx             — Routes: /, /about, /tracks, /services, /book, /login, /register, /dashboard (private), /admin
   main.jsx, index.css — Global theme (cyan/magenta/gold, Bebas/Barlow/DM Mono)
-  components/Nav.jsx  — Logo, anchor links to /#about, /#tracks, /#services, /#book; auth buttons
+  components/Nav.jsx  — Logo; marketing links to /about, /tracks, /services, /book; auth buttons
   context/AuthContext.jsx — JWT in localStorage
   services/api.js     — All fetch wrappers; admin uses X-Admin-Token, never query ?token=
   data/patrickContent.js — Editable bio paragraphs, Spotify track IDs, optional SPOTIFY_ARTIST_URL
+  components/home/    — MarketingLayout + Hero, About, Tracks, Services, Book CTA, Footer sections
   pages/
-    Home.jsx          — Hero, About, Tracks (embeds), Services, CTA, footer; hash scroll
+    Home.jsx          — Hero only + MarketingLayout/footer
+    AboutPage, TracksPage, ServicesPage, BookPage — one section per route (no hash scroll)
     Login, Register
     Dashboard.jsx     — Venues, booking modal (date/time/service/genre/budget/notes), calendar + lists
     Admin.jsx         — Session bootstrap, login, schedule/requests/clients, status actions

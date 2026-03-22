@@ -57,10 +57,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <a href="#about" className="hero-scroll-cue">
-        <span className="hero-scroll-cue-label">Bio &amp; story</span>
-        <span className="hero-scroll-cue-arrow" aria-hidden>↓</span>
-      </a>
+      <Link to="/about" className="hero-page-link">
+        <span className="hero-page-link-label">Bio &amp; story</span>
+        <span className="hero-page-link-arrow" aria-hidden>→</span>
+      </Link>
     </section>
   );
 }

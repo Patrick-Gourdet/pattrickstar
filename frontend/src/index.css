@@ -447,15 +447,16 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
 }
 
-.hero-scroll-cue {
+/* Hero link to /about — route navigation, no in-page scroll */
+.hero-page-link {
   position: absolute;
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   color: var(--grey);
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.72rem;
@@ -464,16 +465,18 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
   transition: color 0.2s;
 }
-.hero-scroll-cue:hover { color: var(--cyan); }
-.hero-scroll-cue-arrow {
-  font-size: 1.1rem;
-  animation: scroll-nudge 1.6s ease-in-out infinite;
+.hero-page-link:hover {
   color: var(--cyan);
-  opacity: 0.85;
 }
-@keyframes scroll-nudge {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(6px); opacity: 1; }
+.hero-page-link:hover .hero-page-link-arrow {
+  transform: translateX(4px);
+  color: var(--cyan);
+}
+.hero-page-link-arrow {
+  font-size: 1.1rem;
+  color: var(--cyan);
+  opacity: 0.9;
+  transition: transform 0.2s ease, color 0.2s;
 }
 
 .bio-layout {
@@ -536,6 +539,29 @@ a { text-decoration: none; color: inherit; }
   max-width: 720px;
   margin-bottom: 28px;
 }
+.tracks-platform-block { margin-bottom: 8px; }
+.tracks-platform-block--spotify {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.tracks-platform-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(0,245,255,0.25);
+}
+.tracks-profile-card {
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+.track-embed-wrap--profile iframe {
+  display: block;
+}
 .tracks-code {
   font-family: 'DM Mono', monospace;
   font-size: 0.78rem;
@@ -577,6 +603,13 @@ a { text-decoration: none; color: inherit; }
   background: var(--black);
 }
 .tracks-footer { margin-top: 32px; text-align: center; }
+.tracks-footer--split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
 .tracks-footnote { font-size: 0.78rem; color: var(--grey); }
 
 .landing-cta {

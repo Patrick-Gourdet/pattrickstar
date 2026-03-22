@@ -1,7 +1,48 @@
 /**
- * Public site copy & embeds for Patrick Star — swap Spotify IDs / URLs for your releases.
- * Find embed: Spotify → Share → Embed → copy track or album ID from the iframe src.
+ * Public site copy & embeds for Patrick Star — edit URLs and IDs below.
+ *
+ * Spotify: Share → Embed → copy track ID from open.spotify.com/embed/track/THIS
+ * SoundCloud: use the browser URL for your profile or each track (soundcloud.com/…)
  */
+
+/** Builds SoundCloud widget iframe `src` from a track or profile permalink. */
+export function soundcloudPlayerSrc(permalink, options = {}) {
+  if (!permalink?.trim()) return '';
+  const {
+    visual = true,
+    color = '00f5ff',
+    hideRelated = true,
+    showComments = false,
+  } = options;
+  const hex = color.replace(/^#/, '');
+  const params = new URLSearchParams({
+    url: permalink.trim(),
+    color: `#${hex}`,
+    auto_play: 'false',
+    hide_related: String(hideRelated),
+    show_comments: String(showComments),
+    show_user: 'true',
+    show_reposts: 'false',
+    show_teaser: 'true',
+    visual: String(visual),
+  });
+  return `https://w.soundcloud.com/player/?${params.toString()}`;
+}
+
+/** Your SoundCloud profile — opens “Visit profile” and can power the large embed. */
+export const SOUNDCLOUD_PROFILE_URL = '';
+
+/** Embed URL for the profile player; if empty, SOUNDCLOUD_PROFILE_URL is used when set. */
+export const SOUNDCLOUD_PROFILE_EMBED_URL = '';
+
+/**
+ * SoundCloud tracks — each `url` is the full track link from the address bar.
+ * Example: { title: 'My mix', caption: 'Live cut', url: 'https://soundcloud.com/you/slug' }
+ */
+export const SOUNDCLOUD_TRACKS = [  { title: 'To the Moon and Back', caption: 'Recorded in Miami', url: 'https://soundcloud.com/user-112294032-730314017/to-the-moon-and-back' },
+  { title: 'Big Booty Bae', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/big-booty-bae-extended' },
+  { title: 'Demons and Angels', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/demons-and-angels' },
+  { title: 'Think Different', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/think-different' },];
 
 /** Set to your Spotify artist URL when live — button hides if empty. */
 export const SPOTIFY_ARTIST_URL = '';

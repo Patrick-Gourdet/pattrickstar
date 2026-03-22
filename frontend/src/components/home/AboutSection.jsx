@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section className="landing-section" aria-labelledby="about-heading">
       <div className="landing-inner">
-        <SectionRule id="about" title="ABOUT" kicker="Patrick Star" />
+        <SectionRule title="ABOUT" kicker="Patrick Star" />
         <h3 id="about-heading" className="visually-hidden">About Patrick Star</h3>
 
         <div className="bio-layout">
@@ -28,9 +28,9 @@ export default function AboutSection() {
               <Link to="/register">
                 <button type="button" className="btn btn-primary btn-sm">START A REQUEST</button>
               </Link>
-              <a href="#tracks">
+              <Link to="/tracks">
                 <button type="button" className="btn btn-ghost btn-sm">HEAR TRACKS</button>
-              </a>
+              </Link>
             </div>
           </div>
 

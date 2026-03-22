@@ -151,7 +151,7 @@ Full reference: [Custom domains on Fly.io](https://fly.io/docs/networking/custom
 ## Features
 
 **Public site (`/`):**
-- Landing hero, **About / bio**, **Tracks** (Spotify embeds), **Services** grid, booking CTA — edit copy and track IDs in `frontend/src/data/patrickContent.js`.
+- Public site: `/` hero; separate routes `/about`, `/tracks`, `/services`, `/book` — edit copy and track IDs in `frontend/src/data/patrickContent.js`.
 
 **For Clients (Promoters / Venues):**
 - Register with company/promoter info

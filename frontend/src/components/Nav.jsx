@@ -23,10 +23,10 @@ export default function Nav() {
       </Link>
       <div className="nav-links">
         <div className="nav-anchors">
-          <Link to="/#about" className="nav-anchor">About</Link>
-          <Link to="/#tracks" className="nav-anchor">Tracks</Link>
-          <Link to="/#services" className="nav-anchor">Services</Link>
-          <Link to="/#book" className="nav-anchor">Book</Link>
+          <Link to="/about" className="nav-anchor">About</Link>
+          <Link to="/tracks" className="nav-anchor">Tracks</Link>
+          <Link to="/services" className="nav-anchor">Services</Link>
+          <Link to="/book" className="nav-anchor">Book</Link>
         </div>
         {user ? (
           <>

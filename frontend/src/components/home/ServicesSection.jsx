@@ -11,7 +11,7 @@ const SERVICE_CARDS = [
 
 export default function ServicesSection() {
   return (
-    <section className="landing-section" id="services" aria-labelledby="services-heading">
+    <section className="landing-section" aria-labelledby="services-heading">
       <div className="landing-inner">
         <SectionRule title="SERVICES" kicker="What I offer" />
         <h3 id="services-heading" className="visually-hidden">Services</h3>
