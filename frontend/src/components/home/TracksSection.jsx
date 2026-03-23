@@ -4,6 +4,7 @@ import {
   SOUNDCLOUD_PROFILE_URL,
   SOUNDCLOUD_PROFILE_EMBED_URL,
   SOUNDCLOUD_TRACKS,
+  SOUNDCLOUD_MIX,
   soundcloudPlayerSrc,
 } from '../../data/patrickContent';
 import SectionRule from './SectionRule';
