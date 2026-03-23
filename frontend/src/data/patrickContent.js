@@ -49,21 +49,7 @@ export const SPOTIFY_ARTIST_URL = '';
 
 /** Featured Spotify track IDs (from share link: open.spotify.com/track/THIS_PART) */
 export const FEATURED_TRACKS = [
-  {
-    title: 'In rotation',
-    caption: 'House · peak energy — swap ID for your own release',
-    spotifyTrackId: '5MgIar3zeWnG51j9VpdhaL',
-  },
-  {
-    title: 'Late-night groove',
-    caption: 'Deep & driving — replace in patrickContent.js',
-    spotifyTrackId: '4mn2HEOKgr6GQv4v27EVCK',
-  },
-  {
-    title: 'Floor filler',
-    caption: 'Open format bridge — embed updates automatically',
-    spotifyTrackId: '4iV5W9uYEdYUVa79Axb7Rh',
-  },
+
 ];
 
 export const BIO_PARAGRAPHS = [
