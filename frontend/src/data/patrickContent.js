@@ -30,7 +30,7 @@ export function soundcloudPlayerSrc(permalink, options = {}) {
 }
 
 /** Your SoundCloud profile — opens “Visit profile” and can power the large embed. */
-export const SOUNDCLOUD_PROFILE_URL = '';
+export const SOUNDCLOUD_PROFILE_URL = 'https://soundcloud.com/user-112294032-730314017';
 
 /** Embed URL for the profile player; if empty, SOUNDCLOUD_PROFILE_URL is used when set. */
 export const SOUNDCLOUD_PROFILE_EMBED_URL = '';
@@ -44,6 +44,10 @@ export const SOUNDCLOUD_TRACKS = [  { title: 'To the Moon and Back', caption: 'R
   { title: 'Demons and Angels', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/demons-and-angels' },
   { title: 'Think Different', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/think-different' },];
 
+export const SOUNDCLOUD_MIX = [{ title: 'Patrick Star Sarro Flow', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/patrick-star-sarro-flow' },
+  {title: 'For the DJs', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/forthedjs' },
+  {title: 'Need to Dance', caption: '', url: 'https://soundcloud.com/user-112294032-730314017/soundcloud' },
+ ];
 /** Set to your Spotify artist URL when live — button hides if empty. */
 export const SPOTIFY_ARTIST_URL = '';
 

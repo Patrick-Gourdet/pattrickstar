@@ -86,6 +86,35 @@ export default function TracksSection() {
               })}
             </div>
           )}
+          <div className="tracks-platform-head">SoundCloud Mixes</div>
+          {SOUNDCLOUD_MIX.length > 0 && (
+            <div className="tracks-grid">
+              {SOUNDCLOUD_MIX.map((t) => {
+                const src = soundcloudPlayerSrc(t.url, { visual: true });
+                if (!src) return null;
+                return (
+                  <div key={t.url} className="card track-card">
+                    <div className="track-card-head">
+                      <h4 className="track-card-title">{t.title}</h4>
+                      {t.caption && <p className="track-card-caption">{t.caption}</p>}
+                    </div>
+                    <div className="track-embed-wrap">
+                      <iframe
+                        title={`SoundCloud — ${t.title}`}
+                        style={{ borderRadius: 'var(--radius)', border: 'none' }}
+                        width="100%"
+                        height="300"
+                        scrolling="no"
+                        allow="autoplay"
+                        src={src}
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* —— Spotify —— */}
