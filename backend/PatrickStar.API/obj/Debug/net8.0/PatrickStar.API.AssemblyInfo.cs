@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PatrickStar.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c85e8f70ce046e5a0ad8d73fe3d441a73b2d18e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+883a6ab5d779b2742cee7d6222489cf1116a88d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("PatrickStar.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PatrickStar.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

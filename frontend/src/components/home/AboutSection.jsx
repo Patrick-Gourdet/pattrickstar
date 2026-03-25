@@ -7,7 +7,7 @@ export default function AboutSection() {
     <section className="landing-section" aria-labelledby="about-heading">
       <div className="landing-inner">
         <SectionRule title="ABOUT" kicker="Patrick Star" />
-        <h3 id="about-heading" className="visually-hidden">About Patrick Star</h3>
+        <h3 id="about-heading" className="visually-hidden">About Pattrick Star</h3>
 
         <div className="bio-layout">
           <div className="card card-glow-cyan bio-panel bio-panel--intro">
@@ -40,7 +40,6 @@ export default function AboutSection() {
               <ul className="bio-facts">
                 <li><strong>Sound</strong> Tech house, minimal, afro house, open format</li>
                 <li><strong>Formats</strong> Clubs, festivals, private &amp; corporate</li>
-                <li><strong>Focus</strong> Room reading, long arcs, peak moments</li>
                 <li><strong>Based</strong> Miami — travel by arrangement</li>
               </ul>
             </div>
@@ -48,7 +47,7 @@ export default function AboutSection() {
               <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '1.1rem', lineHeight: 1.55, color: 'var(--white)', fontStyle: 'italic' }}>
                 "The best nights are not about showing off — they are about everyone forgetting what time it is."
               </p>
-              <p style={{ marginTop: '14px', fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--magenta)' }}>— Patrick Star</p>
+              <p style={{ marginTop: '14px', fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--magenta)' }}>— Pattrick Star</p>
             </div>
           </aside>
         </div>

@@ -142,7 +142,7 @@ function BookingModal({ venues, onClose, onBooked }) {
         endTime: endDT.toISOString(),
         budget: budget ? parseFloat(budget) : null,
       });
-      toast.success('BOOKING REQUEST SENT! Patrick will be in touch.');
+      toast.success('BOOKING REQUEST SENT! Pattrick will be in touch.');
       onBooked(); onClose();
     } catch (err) { toast.error(err.message || 'Booking failed.');
     } finally { setLoading(false); }
@@ -212,7 +212,7 @@ function BookingModal({ venues, onClose, onBooked }) {
           </div>
 
           <div className="input-group">
-            <label>Notes for Patrick</label>
+            <label>Notes for Pattrick</label>
             <textarea placeholder="Event details, crowd type, dress code, special requirements…" value={notes} onChange={e => setNotes(e.target.value)} />
           </div>
 

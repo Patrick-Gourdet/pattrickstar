@@ -307,7 +307,7 @@ export default function Admin() {
     <div className="page-sm">
       <div className="auth-card">
         <h1>ARTIST <span>PORTAL</span></h1>
-        <p className="subtitle">// patrick star — secure backend access</p>
+        <p className="subtitle">// Pattrick star — secure backend access</p>
         <p style={{ fontSize: '0.8rem', color: 'var(--grey-light)', lineHeight: 1.5, marginBottom: '20px' }}>
           Token is sent over HTTPS in the request body, then stored in <strong style={{ color: 'var(--grey-light)' }}>session storage</strong> for this tab only.
           API calls use the <code style={{ color: 'var(--cyan)' }}>X-Admin-Token</code> header — never the URL. Set your secret with{' '}

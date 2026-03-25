@@ -5,7 +5,7 @@ export default function LandingFooter() {
   return (
     <footer className="landing-footer">
       <div className="landing-footer-inner">
-        <span>© {year} Patrick Star</span>
+        <span>© {year} Pattrick Star</span>
         <span className="landing-footer-dot">·</span>
         <Link to="/about">About</Link>
         <span className="landing-footer-dot">·</span>

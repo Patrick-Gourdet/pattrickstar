@@ -3,9 +3,6 @@ import SectionRule from './SectionRule';
 const SERVICE_CARDS = [
   { icon: '🎛️', name: 'DJ Set', desc: 'Club, bar, or festival. Tech house and minimal are home — but I read the room.', tag: 'Available', tagColor: 'var(--cyan)' },
   { icon: '🌙', name: 'Club Night', desc: 'Full night programming, open to close. Build the arc, hold the energy, end on a peak.', tag: 'Available', tagColor: 'var(--cyan)' },
-  { icon: '🎉', name: 'Private Event', desc: 'Weddings, birthday parties, brand activations. Curated for your guests.', tag: 'Available', tagColor: 'var(--cyan)' },
-  { icon: '🏢', name: 'Corporate', desc: 'Tasteful, professional, and still actually fun. Sets designed for the room.', tag: 'Available', tagColor: 'var(--cyan)' },
-  { icon: '🎤', name: 'MC / Host', desc: 'Stage presence, crowd interaction, event hosting.', tag: 'Available', tagColor: 'var(--cyan)' },
   { icon: '⚡', name: 'Live PA', desc: 'Original material performed live. Request via the portal.', tag: 'Available', tagColor: 'var(--cyan)' },
 ];
 

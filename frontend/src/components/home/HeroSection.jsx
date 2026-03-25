@@ -12,7 +12,7 @@ export default function HeroSection() {
       </div>
 
       <h1>
-        PATRICK
+        PATTRICK
         <span className="name-star">STAR</span>
       </h1>
 
