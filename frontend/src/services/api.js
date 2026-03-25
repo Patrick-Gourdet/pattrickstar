@@ -42,4 +42,13 @@ export const api = {
     }).then(handle),
   adminGetClients: (t) =>
     fetch(`${BASE}/bookings/admin/clients`, { headers: { 'Content-Type': 'application/json', 'X-Admin-Token': t } }).then(handle),
+  /** JSON snapshot (clients, venues, bookings) — includes password hashes. */
+  adminExportJson: (t) =>
+    fetch(`${BASE}/bookings/admin/export-json`, { headers: { 'Content-Type': 'application/json', 'X-Admin-Token': t } }).then(handle),
+  /** Raw SQLite file — full DB backup. */
+  adminBackupDb: async (t) => {
+    const res = await fetch(`${BASE}/bookings/admin/backup-db`, { headers: { 'X-Admin-Token': t } });
+    if (!res.ok) { const text = await res.text(); throw new Error(text || `Error ${res.status}`); }
+    return res.blob();
+  },
 };

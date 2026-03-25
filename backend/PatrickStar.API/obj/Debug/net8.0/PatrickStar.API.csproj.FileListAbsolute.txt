@@ -60,3 +60,4 @@ c:\Users\Carnival\Documents\patrick-star\backend\PatrickStar.API\obj\Debug\net8.
 c:\Users\Carnival\Documents\patrick-star\backend\PatrickStar.API\obj\Debug\net8.0\PatrickStar.API.pdb
 c:\Users\Carnival\Documents\patrick-star\backend\PatrickStar.API\obj\Debug\net8.0\PatrickStar.API.genruntimeconfig.cache
 c:\Users\Carnival\Documents\patrick-star\backend\PatrickStar.API\obj\Debug\net8.0\ref\PatrickStar.API.dll
+c:\Users\Carnival\Documents\patrick-star\backend\PatrickStar.API\obj\Debug\net8.0\PatrickStar.API.sourcelink.json

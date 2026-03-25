@@ -48,7 +48,7 @@ Root: Dockerfile, docker-compose.yml, fly.toml, README.md
 - **`/api/auth`** — register, login → JWT with `clientId` claim  
 - **`/api/venues`** — CRUD-ish for client venues + photo upload to `/data/photos`  
 - **`/api/bookings`** — `GET` mine, `POST` create (validates venue ownership, future event date, end > start), `DELETE` cancel (scoped to owning client)  
-- **`/api/bookings/admin/*`** — `POST login`, `GET all`, `GET clients` (aggregated detail), `PATCH {id}/status` (status whitelist: Pending, Confirmed, Declined, Completed)
+- **`/api/bookings/admin/*`** — `POST login`, `GET all`, `GET clients`, `PATCH {id}/status`, **`GET export-json`** (JSON snapshot), **`GET backup-db`** (SQLite file download) — all require `X-Admin-Token`
 
 ## Domain model
 

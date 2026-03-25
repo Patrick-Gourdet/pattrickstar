@@ -141,6 +141,41 @@ public class BookingsController : ControllerBase
         }).ToList();
         return Ok(details);
     }
+
+    /// <summary>Full data export as JSON (includes password hashes — treat as secret).</summary>
+    [AllowAnonymous]
+    [HttpGet("admin/export-json")]
+    public async Task<IActionResult> ExportJson()
+    {
+        var fail = AdminAuthFailure(Request);
+        if (fail != null) return fail;
+        var clients = await _db.GetAllClientsAsync();
+        var venues = await _db.GetAllVenuesAsync();
+        var bookings = await _db.GetAllBookingsAsync();
+        return Ok(new
+        {
+            exportedAt = DateTime.UtcNow.ToString("o"),
+            formatVersion = 1,
+            note = "Contains bcrypt password hashes. Store securely. Use backup-db for a full SQLite file including WAL state.",
+            clients,
+            venues,
+            bookings
+        });
+    }
+
+    /// <summary>Download the raw SQLite database file (full backup).</summary>
+    [AllowAnonymous]
+    [HttpGet("admin/backup-db")]
+    public IActionResult DownloadDatabase()
+    {
+        var fail = AdminAuthFailure(Request);
+        if (fail != null) return fail;
+        var path = _db.DatabaseFilePath;
+        if (!System.IO.File.Exists(path))
+            return NotFound("Database file not found.");
+        var name = $"patrickstar-backup-{DateTime.UtcNow:yyyyMMdd-HHmmss}Z.db";
+        return PhysicalFile(path, "application/octet-stream", name);
+    }
 }
 
 public class AdminLoginRequest { public string Token { get; set; } = string.Empty; }

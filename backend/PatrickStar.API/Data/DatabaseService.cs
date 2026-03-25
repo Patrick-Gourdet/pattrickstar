@@ -7,10 +7,14 @@ public class DatabaseService
 {
     private readonly string _connectionString;
 
+    /// <summary>Absolute path to the SQLite file (for backups / admin download).</summary>
+    public string DatabaseFilePath { get; }
+
     public DatabaseService(IConfiguration configuration)
     {
         var dbPath = configuration["Database:Path"] ?? "/data/patrickstar.db";
         Directory.CreateDirectory(Path.GetDirectoryName(dbPath)!);
+        DatabaseFilePath = Path.GetFullPath(dbPath);
         _connectionString = $"Data Source={dbPath}";
         InitializeDatabase();
     }

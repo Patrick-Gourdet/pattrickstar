@@ -187,6 +187,7 @@ export default function Admin() {
   const [search, setSearch] = useState('');
   const [requestStatus, setRequestStatus] = useState('all');
   const [requestSearch, setRequestSearch] = useState('');
+  const [backupBusy, setBackupBusy] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem(ADMIN_SESSION_KEY);
@@ -256,6 +257,46 @@ export default function Admin() {
       toast.success(`BOOKING ${status.toUpperCase()}`);
     } catch {
       toast.error('Update failed.');
+    }
+  };
+
+  const triggerDownload = (blob, filename) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const downloadExportJson = async () => {
+    if (!adminToken) return;
+    setBackupBusy(true);
+    try {
+      const data = await api.adminExportJson(adminToken);
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+      triggerDownload(blob, `patrickstar-export-${stamp}.json`);
+      toast.success('JSON export downloaded.');
+    } catch {
+      toast.error('JSON export failed.');
+    } finally {
+      setBackupBusy(false);
+    }
+  };
+
+  const downloadSqliteBackup = async () => {
+    if (!adminToken) return;
+    setBackupBusy(true);
+    try {
+      const blob = await api.adminBackupDb(adminToken);
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+      triggerDownload(blob, `patrickstar-backup-${stamp}.db`);
+      toast.success('Database file downloaded.');
+    } catch {
+      toast.error('Database download failed.');
+    } finally {
+      setBackupBusy(false);
     }
   };
 
@@ -347,6 +388,23 @@ export default function Admin() {
             </div>
           ))}
           <button type="button" className="btn btn-ghost btn-sm" onClick={handleLogout} style={{ marginLeft: '4px' }}>SIGN OUT</button>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: '28px', borderColor: 'rgba(0,245,255,0.15)' }}>
+        <div className="section-title" style={{ marginBottom: '16px' }}>BACKUP &amp; DATA EXPORT</div>
+        <p style={{ fontSize: '0.8rem', color: 'var(--grey-light)', lineHeight: 1.55, marginBottom: '16px' }}>
+          <strong style={{ color: 'var(--gold)' }}>JSON</strong> — clients, venues, and bookings (readable; includes bcrypt hashes — store securely).
+          {' '}
+          <strong style={{ color: 'var(--cyan)' }}>.db file</strong> — full SQLite database for a true restore/copy (stop writes during backup on busy servers if needed).
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+          <button type="button" className="btn btn-outline btn-sm" disabled={backupBusy} onClick={downloadExportJson}>
+            {backupBusy ? '…' : '↓'} DOWNLOAD JSON EXPORT
+          </button>
+          <button type="button" className="btn btn-primary btn-sm" disabled={backupBusy} onClick={downloadSqliteBackup}>
+            {backupBusy ? '…' : '↓'} DOWNLOAD SQLITE (.db)
+          </button>
         </div>
       </div>
 

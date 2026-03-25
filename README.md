@@ -166,6 +166,16 @@ Full reference: [Custom domains on Fly.io](https://fly.io/docs/networking/custom
 - Full booking request table
 - Client details panel — venues, contact info, booking history
 - Search clients by name, email, company, or venue name
+- **Backup / export:** download **JSON** (all tables, includes password hashes — keep private) or the raw **SQLite `.db`** file via buttons in the portal, or call `GET /api/bookings/admin/export-json` and `GET /api/bookings/admin/backup-db` with header `X-Admin-Token`.
+
+**CLI example (replace host and token):**
+
+```bash
+curl -fsS -H "X-Admin-Token: YOUR_TOKEN" "https://your-app.fly.dev/api/bookings/admin/backup-db" -o patrickstar-backup.db
+curl -fsS -H "X-Admin-Token: YOUR_TOKEN" "https://your-app.fly.dev/api/bookings/admin/export-json" -o patrickstar-export.json
+```
+
+Venue **photo files** are stored on disk (`/data/photos` in Docker/Fly), not inside SQLite — for a full backup, archive that directory too (e.g. `fly ssh sftp` or copy the whole `/data` volume).
 
 **Service Types:**
 - DJ Set ✅
